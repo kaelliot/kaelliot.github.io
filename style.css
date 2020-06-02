@@ -75,7 +75,7 @@ header nav ul li a:hover {
   position: relative;
 }
 .dialog-box {
-  background: gray;
+  background: wheat;
   box-sizing: border-box;
   padding: 16px 24px;
   margin: 32px auto;
@@ -88,14 +88,13 @@ header nav ul li a:hover {
   width: 100%;
   text-align: center;
   margin: 0;
-  color: #fff;
+  color: gray;
   font-size: 18px;
   line-height: 1.2;
 }
 .hero-cta h2 {
   font-size: 55px;
-  color: pink;
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  color: gray;
 }
 .hero h3 {
   font-size: 24px;
@@ -264,7 +263,7 @@ header nav ul li a:hover {
 }
 .reach-out-box {
   width: 100%;
-  background: white;
+  background: wheat;
   box-sizing: border-box;
   padding: 16px 24px;
   margin: 32px auto;
@@ -287,13 +286,12 @@ header nav ul li a:hover {
   flex-wrap: wrap;
 }
 .reach-out-info {
-  display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   color: gray;
   font-size: 32px;
   padding: 10px;
-
+  text-align: center;
 }
 .contact-info > * {
   flex: 1;
