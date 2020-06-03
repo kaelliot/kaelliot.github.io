@@ -5,12 +5,12 @@
 }
 body {
   color: #333;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  background: url("./assets/pink-dots.jpg");
+  font-family: Arial, Helvetica, sans-serif;
+  background: url("./assets/tropical-dots.jpeg");
 }
 /* Header Section */
 header {
-  background: url("./assets/pink-bar.png");
+  background-color: rgb(250, 210, 217);
   padding: 20px 35px;
   display: flex;
   justify-content: space-between;
@@ -75,7 +75,7 @@ header nav ul li a:hover {
   position: relative;
 }
 .dialog-box {
-  background: wheat;
+  background: peachpuff;
   box-sizing: border-box;
   padding: 16px 24px;
   margin: 32px auto;
@@ -115,6 +115,8 @@ header nav ul li a:hover {
 .title-2 h3 {
   font-size: 46px;
   flex: 1 30%;
+  padding-bottom: 40px;
+  text-align: center;
 }
 .title-text p {
   color: var(--tertiary-color);
@@ -171,6 +173,7 @@ header nav ul li a:hover {
 }
 .bio-img img {
   max-width: 100%;
+  margin-left: 20px;
   border-radius: 40px;
   box-shadow: 0 1px 3px 0;
 }
@@ -178,63 +181,78 @@ header nav ul li a:hover {
   flex: 12;
 }
 /* WORK EXAMPLES STYLES BEGIN */
+.work-box {
+  width: 90%;
+  max-width: 1400px;
+  box-sizing: border-box;
+  margin: 16px auto;
+  border-radius: 40px;
+  padding-bottom: 16px;
+  background: peachpuff;
+  color: gray;
+  overflow: hidden;
+  box-shadow: 0 1px 3px 0;
 }
 .work-grid-wrapper {
-  display: flex;
-  width: 100%;
-  justify-content: right;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 .work-grid-container {
-  max-width: 940px;
-  margin: 0 auto;
   display: grid;
-  grid-template-columns: 50% 50;
-  grid-gap: 10px;
-  grid-auto-flow:  column;
+  column-gap: 10px;
+  row-gap: 10px;
+  grid-auto-flow: dense;
+  /* create a 12 column grid */
+  grid-template-columns: repeat(12, 1fr);
+  /* set each row to be atleast 150px tall and a max of 1fr */
+  grid-auto-rows: minmax(150px, 1fr);
 }
 .work-grid-item {
-  background-color: orange;
-  border: solid;
+  grid-column: span 4;
+  min-height: 150px;
+  display: flex;
+  align-items: flex-end;
+  padding: 0 0 20px 0;
+  text-decoration: none;
+  background-blend-mode: soft-light;
+  background-size: 150%;
+  transition: all 0.5s;
+  font-size: 0.9rem;
   border-radius: 40px;
-  padding: 1em;
-  color: black;
-  text-align: end;
+  box-shadow: 0 1px 3px 0;
+  opacity: 0.5;
+}
+.work-grid-item:hover {
+  opacity: 1.0;
+  
+}
+/* This just selects that first run buddy box becuase it happens to be the first child */
+.work-grid-item:first-child {
+    grid-column: span 8;
+    grid-row: span 3;
 }
 /* specific match */
 .box1 {
   background-image: url(./assets/run-buddy.png);
   background-size: cover;
   background-position: 0 0%;
-  grid-row: 1 / span 12;
-  height: 300px;
-  width: 300px;
 }
 .box2 {
   background-image: url(./assets/dance2011.jpeg);
   background-size: cover;
   background-position: 5%;
-  grid-column: 2;
-  grid-row: 1 / span 4;
-  height: 100px;
-  width: 100px;
 }
 .box3 {
   background-image: url(./assets/IMG_0048.jpeg);
   background-size: cover;
-  background-position: 0;
-  grid-column: 2;
-  grid-row: 8 / span 4;
-  height: 100px;
-  width: 100px;
+  background-position: 0; 
 }
 .box4 {
   background-image: url(./assets/IMG_5614.jpeg);
   background-size: cover;
   background-position: 0;
-  grid-column: 2;
-  grid-row: 15 / span 4;
-  height: 100px;
-  width: 100px;
+  grid-column: 9 / span 4;
 }
 /* REACH OUT STYLES START */
 .contact-box {
@@ -263,7 +281,7 @@ header nav ul li a:hover {
 }
 .reach-out-box {
   width: 100%;
-  background: wheat;
+  background: peachpuff;
   box-sizing: border-box;
   padding: 16px 24px;
   margin: 32px auto;
@@ -279,6 +297,9 @@ header nav ul li a:hover {
 }
 .contact-info div {
   color: white;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 .contact-info {
   display: flex;
@@ -298,12 +319,12 @@ header nav ul li a:hover {
   margin: 15px;
 }
 .contact-info h3 {
-  color: pink;
+  color: peachpuff;
   text-align: center;
   font-size: 32px;
   padding: 10px;
 }
-.contact-info p, {
+.contact-info p {
   margin: 20px 0;
   line-height: 1.5;
   font-size: 16px;
@@ -323,7 +344,7 @@ header nav ul li a:hover {
   margin-bottom: 15px;
   margin-top: 5px;
   border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.75);
+  /*background-color: rgba(255, 255, 255, 0.75);*/
 }
 .contact-form input:focus, .contact-form textarea:focus {
   background-color: rgba(255, 255, 255, 1);
@@ -365,10 +386,12 @@ footer {
   border-radius: 40px;
   flex-wrap: wrap;
   position: relative;
+  color: gray;
 }
 .footer h2 {
   color: gray;
   justify-content: center;
+  font-size: 32px
 }
 /* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
 @media screen and (max-width: 980px) {
